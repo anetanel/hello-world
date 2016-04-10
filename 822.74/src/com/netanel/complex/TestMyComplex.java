@@ -1,6 +1,4 @@
-package com.netanel.tests;
-
-import com.netanel.complex.MyComplex;
+package com.netanel.complex;
 
 public class TestMyComplex {
 	public static void main(String[] args) {
