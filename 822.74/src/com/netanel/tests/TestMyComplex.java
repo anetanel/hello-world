@@ -13,8 +13,6 @@ public class TestMyComplex {
 		System.out.println(s1);
 		System.out.println(s2);
 		System.out.println(s1 == s2);
-		System.out.println("Some text");
-		System.out.println("some text2");
 		
 	}
 }
