@@ -15,6 +15,7 @@ public class TestMyComplex {
 		System.out.println(c1);
 		
 		System.out.println(c1.conjugate());
+		System.out.println(c1.conjugate());
 		
 	}
 }
