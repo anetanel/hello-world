@@ -197,7 +197,15 @@ public class MyDate {
 		
 		if (day > daysInMonths[month-1])
 		{
-			setDay(daysInMonths[month-1]);
+			if (isLeapYear(year) && month == 2)
+			{
+				day = 29;
+			}
+			else
+			{
+				setDay(daysInMonths[month-1]);	
+			}
+			
 		}
 		return this;
 	}
@@ -224,6 +232,67 @@ public class MyDate {
 		return this;
 	}
 	
+	public MyDate previousDay()
+	{
+		day--;
+		if (day == 0)
+		{
+			previousMonth();
+			day = daysInMonths[month-1];
+			if (isLeapYear(year) && month == 2)
+			{
+				day = 29;
+			}
+		}
+		return this;
+	}
+	
+	public MyDate previousMonth()
+	{
+		if (month == 1)
+		{
+			month = 12;
+			previousYear();
+		}
+		else
+		{
+			month--;
+		}
+		
+		if (day > daysInMonths[month-1])
+		{
+			if (isLeapYear(year) && month == 2)
+			{
+				day = 29;
+			}
+			else
+			{
+				setDay(daysInMonths[month-1]);	
+			}
+			
+		}
+		return this;
+	}
+	
+	public MyDate previousYear()
+	{
+		if (year == 1)
+		{
+			System.out.println("Year out of range!");
+			return this;			
+		}
+		else
+		{
+			year--;
+		}
+		
+		if (!isLeapYear(year) && month == 2 && day == 29)
+		{
+			// Or just day == 28?
+			setDay(28);
+		}
+		return this;
+	}
 	//
 	// toString
 	//
