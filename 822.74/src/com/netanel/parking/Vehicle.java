@@ -1,6 +1,6 @@
 package com.netanel.parking;
 
-public class Vehicle extends Transport{
+public abstract class Vehicle extends Transport{
 	//
 	// Attributes
 	//
@@ -25,10 +25,6 @@ public class Vehicle extends Transport{
 	public int getModel() {
 		return model;
 	}
-	
-	//
-	// Functions 
-	//
 
 	//
 	// toString

@@ -4,7 +4,7 @@ public class Transport {
 	//
 	// Attributes
 	//
-	private String color = "White";
+	private String color = "Undefined";
 	private int maxVelocity;
 	
 	//
@@ -35,10 +35,6 @@ public class Transport {
 	public void setColor(String color) {
 		this.color = color;
 	}
-	
-	//
-	// Functions
-	//
 	
 	//
 	// toString
