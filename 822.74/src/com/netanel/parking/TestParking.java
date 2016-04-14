@@ -20,8 +20,8 @@ public class TestParking {
 		
 		p1.parkNewTransport(b1);
 		p1.parkNewTransport(b2);
-		p1.parkNewTransport(v1);
-		p1.parkNewTransport(v2);
+		p1.parkNewTransport(t1);
+		p1.parkNewTransport(t2);
 		p1.parkNewTransport(c1);
 		p1.parkNewTransport(c2);
 		
@@ -33,6 +33,12 @@ public class TestParking {
 		System.out.println(p1.getTransportByColor("white"));
 		System.out.println(p1.getTransportByColor("blue"));
 		System.out.println(p1.getTransportByColor("yellow"));
+		
+		System.out.println(p1.countVehicle());
+		System.out.println(p1.countCar());
+		
+		System.out.println(p1.countTruckOfColorAndWeight("black", 500, 999999));
+		
 		
 			
 	}

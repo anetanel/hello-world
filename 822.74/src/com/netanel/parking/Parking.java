@@ -81,7 +81,44 @@ public class Parking {
 		System.out.println("Color " + color + " not found! Returning default Transport.");
 		return new Transport();
 	}
+
+	public int countVehicle() {
+		int count = 0;
+		for (int i = 0; i < transports.length; i++) {
+			if (transports[i] == null) continue;
+			if (transports[i] instanceof Vehicle) {
+				count++;
+			}
+		}
+		return count;
+	}
 	
+	public int countCar() {
+		int count = 0;
+		for (int i = 0; i < transports.length; i++) {
+			if (transports[i] == null) continue;
+			if (transports[i] instanceof Car) {
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	public int countTruckOfColorAndWeight(String color, int minWeight, int maxWeight) {
+		int count = 0;
+		int weight;
+		for (int i = 0; i < transports.length; i++) {
+			if (transports[i] == null) continue;
+			if (transports[i] instanceof Truck && 
+				color.toUpperCase().equals(transports[i].getColor().toUpperCase()) &&
+				((Truck)(transports[i])).getWeight() > minWeight &&
+				((Truck)(transports[i])).getWeight() < maxWeight)
+			{
+					count++;
+			}
+		}
+		return count;
+	}
 	//
 	// toString
 	//

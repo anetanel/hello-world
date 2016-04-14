@@ -27,6 +27,10 @@ public class Vehicle extends Transport{
 	}
 	
 	//
+	// Functions 
+	//
+
+	//
 	// toString
 	//
 	@Override
