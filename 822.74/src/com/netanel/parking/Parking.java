@@ -64,6 +64,7 @@ public class Parking {
 
 	public void getParkingStatus() {
 		// Prints the current parking lot status
+		System.out.println("Parking Lot Status Report:");
 		for (int i = 0; i < transports.length; i++) {
 			if (transports[i] == null) {
 				System.out.println("Spot " + i + ": Empty");

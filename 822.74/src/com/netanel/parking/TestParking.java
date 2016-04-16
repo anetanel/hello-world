@@ -27,18 +27,19 @@ public class TestParking {
 			p1.parkNewTransport(b2);
 			p1.getParkingStatus();
 			
-			System.out.println(p1.getTransportByColor("black"));
+			System.out.println("Black transports:\n" + p1.getTransportByColor("black") + "\n");
 			
-			System.out.println(p1.countVehicle());
+			System.out.println("Number of Vehicles: " + p1.countVehicle());
 			
-			System.out.println(p1.countCar());
+			System.out.println("Number of Cars: " + p1.countCar());
 			
-			System.out.println(p1.countTruckOfColorAndWeight("black", 999, 999999));
-			System.out.println(p1.countTruckOfColorAndWeight("black", 5000, 999999));
+			System.out.println("Number of black trucks, weighing between 999 to 999999: " + p1.countTruckOfColorAndWeight("black", 999, 999999));
+			System.out.println("Number of black trucks, weighing between 5000 to 999999: " + p1.countTruckOfColorAndWeight("black", 5000, 999999));
 			
-			System.out.println(p1.countBikeOfGear(4, 15));
+			System.out.println("Number of Bikes with between 4 and 15 gears: " + p1.countBikeOfGear(4, 15));
 			
 			Transport[] trans1 = p1.getTransportByMaxVelocity(0);
+			System.out.println("Transports with Max Velocitiy 0:");
 			for (int i = 0; i < trans1.length; i++) {
 				System.out.println(trans1[i]);
 			}
