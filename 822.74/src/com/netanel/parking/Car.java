@@ -20,4 +20,16 @@ public class Car extends Vehicle {
 	public String toString() {
 		return "A Car, which is " + super.toString();	
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Car)) {
+			return false;
+		}
+		
+		Car other = (Car)obj;
+		return (getColor() == other.getColor() &&
+				getMaxVelocity() == other.getMaxVelocity() &&
+				getModel() == other.getModel());				
+	}
 }

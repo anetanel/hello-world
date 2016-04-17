@@ -33,4 +33,16 @@ public class Bike extends Transport {
 	public String toString() {
 		return "A Bike with " + gear + " gears. Is " + super.toString(); 
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Bike)) {
+			return false;
+		}
+		
+		Bike other = (Bike)obj;
+		return (this.gear == other.gear &&
+				getColor() == other.getColor() &&
+				getMaxVelocity() == other.getMaxVelocity());				
+	}
 }

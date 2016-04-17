@@ -40,6 +40,17 @@ public class Truck extends Vehicle {
 		return "a Truck, weighing " + weight + ", which is " + super.toString();
 	}
 	
-	
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Truck)) {
+			return false;
+		}
+		
+		Truck other = (Truck)obj;
+		return (getColor() == other.getColor() &&
+				getMaxVelocity() == other.getMaxVelocity() &&
+				getModel() == other.getModel() &&
+				weight == other.weight);				
+	}
 
 }
