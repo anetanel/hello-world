@@ -91,17 +91,20 @@ public class Movie {
 	}
 
 	public void addActor(String actor){
-		// Adds one actor to acrotrs set
+		// Adds one actor to actors set
+		if (actors.contains(actor)){
+			throw new IllegalArgumentException(actor + " already exist in " + name);
+		}
 		actors.add(actor);
 	}
 	
-	public void updateRank(int rank){
+	public void updateRank(int vote){
 		//Updates the rank
-		if (rank < 0 || rank > 10) {
-			throw new IllegalArgumentException("Illegal rank: " + rank);
+		if (vote < 0 || vote > 10) {
+			throw new IllegalArgumentException("Illegal vote: " + rank);
 		} else {
-			this.rank = rank;
-		}		
-	}
-		
+			rank = ((rank * numOfVoters) + vote) / (numOfVoters+1);
+			numOfVoters++;
+		}
+	}	
 }

@@ -22,5 +22,25 @@ public class TestIMDB {
 		System.out.println(m1);
 		System.out.println(m1.getActors());
 		
+		
+		System.out.println("*******************************");
+		
+		IMDB imdb = new IMDB();
+		
+		Set<String> killBillActors = new HashSet<>();
+		killBillActors.add("Uma Thurman");
+		killBillActors.add("Lucy Liu");
+		imdb.addMovie("Kill Bill", killBillActors);
+		System.out.println(imdb.getAll());
+		
+//		imdb.addMovie("Kill Bill", new HashSet<>());
+		
+		Set<String> reservoirDogsActors = new HashSet<String>();
+		reservoirDogsActors.add("Harvey Keitel");
+		imdb.addMovie("Reservoir Dogs", reservoirDogsActors);
+		System.out.println(imdb.getAll());
+		
+		
+		
 	}
 }
