@@ -43,6 +43,12 @@ public class TestParking {
 			for (int i = 0; i < trans1.length; i++) {
 				System.out.println(trans1[i]);
 			}
+			
+			Bike b3 = new Bike(12);
+			Bike b4 = new Bike(12);
+			System.out.println(b3.equals(b4));
+			
+			
 
 	}
 }
