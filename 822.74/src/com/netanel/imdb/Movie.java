@@ -58,7 +58,7 @@ public class Movie {
 	
 	@Override
 	public String toString() {
-		return "Movie: " + name + ". Actors: " + actors + ". Voters: " + numOfVoters + ". Rank: " + rank;
+		return "Movie: " + name + ". Actors: " + actors + ". Voters: " + numOfVoters + ". Rank: " + String.format("%.1f", rank);
 	}
 
 	@Override
@@ -101,8 +101,9 @@ public class Movie {
 	public void updateRank(int vote){
 		//Updates the rank
 		if (vote < 0 || vote > 10) {
-			throw new IllegalArgumentException("Illegal vote: " + rank);
+			throw new IllegalArgumentException("Illegal vote: " + vote);
 		} else {
+			//Calculate new average
 			rank = ((rank * numOfVoters) + vote) / (numOfVoters+1);
 			numOfVoters++;
 		}

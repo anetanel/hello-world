@@ -35,12 +35,23 @@ public class TestIMDB {
 		
 //		imdb.addMovie("Kill Bill", new HashSet<>());
 		
-		Set<String> reservoirDogsActors = new HashSet<String>();
+		Set<String> reservoirDogsActors = new HashSet<>();
 		reservoirDogsActors.add("Harvey Keitel");
 		imdb.addMovie("Reservoir Dogs", reservoirDogsActors);
 		System.out.println(imdb.getAll());
 		
+		System.out.println("*******************************");
 		
+		imdb.vote("Kill Bill", 9);
+		imdb.vote("Kill Bill", 10);
+		imdb.vote("Kill Bill", 0);
+		imdb.vote("Kill Bill", 3);
+		imdb.vote("Kill Bill", 4);
+		imdb.vote("Kill Bill", 5);
+		imdb.vote("Kill Bill", 6);
 		
+		imdb.addMovie();
+		System.out.println(imdb.getAll());
+				
 	}
 }
