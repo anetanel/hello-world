@@ -1,7 +1,5 @@
 package com.netanel.movables;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MoveAction;
-
 public class TestMovable {
 	public static void main(String[] args) {
 		Movable m1 = new MovablePoint(5, 6, 10, 4);     // upcast
