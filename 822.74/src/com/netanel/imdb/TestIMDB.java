@@ -4,54 +4,97 @@ import java.util.*;
 
 public class TestIMDB {
 	public static void main(String[] args) {
-		Movie m1 = new Movie("Agmageddon", new HashSet<>());
-		m1.addActor("Bruce Willis");
-		m1.addActor("Ben Affleck");
+//		Movie m1 = new Movie("Agmageddon", new HashSet<>());
+//		m1.addActor("Bruce Willis");
 //		m1.addActor("Ben Affleck");
+////		m1.addActor("Ben Affleck");
+//		
+//		System.out.println(m1);
+//		System.out.println(m1.getActors());
+//		
+//		m1.setName("Armageddon (1998)");
+//		System.out.println(m1);
+//		
+//		Set<String> actors = new HashSet<>();
+//		actors.add("Billy Bob Thornton");
+//		m1.setActors(actors);
+//		
+//		System.out.println(m1);
+//		System.out.println(m1.getActors());
+//		
+//		
+//		System.out.println("*******************************");
+//		
+//		IMDB imdb = new IMDB();
+//		
+//		Set<String> killBillActors = new HashSet<>();
+//		killBillActors.add("Uma Thurman");
+//		killBillActors.add("Lucy Liu");
+//		imdb.addMovie("Kill Bill", killBillActors);
+//		System.out.println(imdb.getAll());
+//		
+////		imdb.addMovie("Kill Bill", new HashSet<>());
+//		
+//		Set<String> reservoirDogsActors = new HashSet<>();
+//		reservoirDogsActors.add("Harvey Keitel");
+//		imdb.addMovie("Reservoir Dogs", reservoirDogsActors);
+//		System.out.println(imdb.getAll());
+//		
+//		System.out.println("*******************************");
+//		
+//		imdb.vote("Kill Bill", 9);
+//		imdb.vote("Kill Bill", 10);
+//		imdb.vote("Kill Bill", 0);
+//		imdb.vote("Kill Bill", 3);
+//		imdb.vote("Kill Bill", 4);
+//		imdb.vote("Kill Bill", 5);
+//		imdb.vote("Kill Bill", 6);
+//		
+//		imdb.addMovie();
+//		System.out.println(imdb.getAll());
+//		
+//		Set<String> starWarsActors = new HashSet<String>(Arrays.asList("Mark Hamill", "Harrison Ford", "Carrie Fisher"));
+//		System.out.println(starWarsActors);
+//		imdb.addMovie("Star Wars", starWarsActors);
+//		System.out.println(imdb.getAll());
+//		System.out.println("*******************************************");
+//		System.out.println(imdb.getMovies().get("Star Wars"));
 		
-		System.out.println(m1);
-		System.out.println(m1.getActors());
+		// First, create an actor set
+		Set<String> starWarsActors = new HashSet<>();
+		// Populate it with actors
+		starWarsActors.add("Mark Hamill");
+		starWarsActors.add("Harrison Ford");
+		starWarsActors.add("Carrie Fisher");
+		// Create a new movie with the actors set
+		Movie starWars = new Movie("Star Wars", starWarsActors);
+		System.out.println("Original actors:\n" + starWars);
 		
-		m1.setName("Armageddon (1998)");
-		System.out.println(m1);
+		// Remove an actor from the set (or create another set...)
+		starWarsActors.remove("Harrison Ford");
+		// Call setActors with the new set
+		starWars.setActors(starWarsActors);
+		System.out.println("New actors:\n" + starWars);
 		
-		Set<String> actors = new HashSet<>();
-		actors.add("Billy Bob Thornton");
-		m1.setActors(actors);
-		
-		System.out.println(m1);
-		System.out.println(m1.getActors());
-		
-		
-		System.out.println("*******************************");
-		
+		System.out.println("***************");
+		// Another way is by accessing the movie from the IMDB
 		IMDB imdb = new IMDB();
-		
-		Set<String> killBillActors = new HashSet<>();
-		killBillActors.add("Uma Thurman");
-		killBillActors.add("Lucy Liu");
+		// Create an actors set (you can use this cool shortcut) 
+		Set<String> killBillActors = new HashSet<>(Arrays.asList("Uma Thurman", "Lucy Liu", "Daryl Hannah"));
+		// Add a new movie to the IMDB, with the actors set
 		imdb.addMovie("Kill Bill", killBillActors);
-		System.out.println(imdb.getAll());
+		// Print the movie from the IMDB
+		System.out.println("Original actors:\n" + imdb.getMovies().get("Kill Bill"));
+		// Create another actors set, just for fun :)
+		Set<String> newKillBillActors = new HashSet<>(Arrays.asList("David Carradine", "Uma Thurman", "Michael Madsen", "Lucy Liu", "Daryl Hannah"));
+		// Access the Movie object from the IMDB object and call setActors
+		imdb.getMovies().get("Kill Bill").setActors(newKillBillActors);
+		// Create an object referance for the movie, for ease of use
+		Movie killBill = imdb.getMovies().get("Kill Bill");
+		System.out.println("New actors:\n" + killBill);
 		
-//		imdb.addMovie("Kill Bill", new HashSet<>());
+		Movie testMovie = imdb.addMovie("Test Movie", new HashSet<>(Arrays.asList("Sami", "Susu")));
+		System.out.println(testMovie);
 		
-		Set<String> reservoirDogsActors = new HashSet<>();
-		reservoirDogsActors.add("Harvey Keitel");
-		imdb.addMovie("Reservoir Dogs", reservoirDogsActors);
-		System.out.println(imdb.getAll());
-		
-		System.out.println("*******************************");
-		
-		imdb.vote("Kill Bill", 9);
-		imdb.vote("Kill Bill", 10);
-		imdb.vote("Kill Bill", 0);
-		imdb.vote("Kill Bill", 3);
-		imdb.vote("Kill Bill", 4);
-		imdb.vote("Kill Bill", 5);
-		imdb.vote("Kill Bill", 6);
-		
-		imdb.addMovie();
-		System.out.println(imdb.getAll());
-				
 	}
 }

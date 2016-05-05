@@ -20,13 +20,14 @@ public class IMDB {
 		return movies;
 	}
 	
-	public void addMovie(String name, Set<String> actors){
+	public Movie addMovie(String name, Set<String> actors){
 		//Create new movie and add to the DB
 		if (movies.containsKey(name)){
 			throw new IllegalArgumentException(name + " already exists in DB");
 		}
 		//Movie movie = new Movie(name, actors);
 		movies.put(name, new Movie(name, actors));
+		return movies.get(name);
 	}
 	
 	public void addMovie(){
