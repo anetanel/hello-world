@@ -2,7 +2,7 @@ package com.netanel.imdb;
 
 import java.util.Set;
 
-public class Movie {
+public class Movie implements Comparable<Movie>{
 	//
 	// Attributes
 	//
@@ -107,5 +107,10 @@ public class Movie {
 			rank = ((rank * numOfVoters) + vote) / (numOfVoters+1);
 			numOfVoters++;
 		}
+	}
+
+	@Override
+	public int compareTo(Movie other) {
+		return this.name.compareTo(other.name);
 	}	
 }

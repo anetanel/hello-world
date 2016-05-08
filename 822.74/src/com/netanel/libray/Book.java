@@ -1,6 +1,6 @@
 package com.netanel.libray;
 
-public class Book {
+public class Book implements Comparable<Book>{
 	//
 	// Attributes
 	//
@@ -13,6 +13,9 @@ public class Book {
 	//
 	// Constructors
 	//
+	public Book(String name){
+		this.name = name;
+	}
 	
 	public Book(String name, Author author, double price) {
 		this.name = name;
@@ -81,6 +84,11 @@ public class Book {
 	
 	public char getAuthorGender() {
 		return author.getGender();
+	}
+
+	@Override
+	public int compareTo(Book o) {
+		return this.name.compareTo(o.name);
 	}
 	
 }
