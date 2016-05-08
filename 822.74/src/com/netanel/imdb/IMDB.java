@@ -46,4 +46,9 @@ public class IMDB {
 		return movies.get(name).getRank();
 	}
 	
+	public List<Movie> getTop(int number){
+		
+		return null;
+	}
+	
 }
