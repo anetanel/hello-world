@@ -47,20 +47,17 @@ public class IMDB {
 	}
 	
 	public List<Movie> getTop(int number){
+		// Returns a list of size 'number', of top ranked movies.
+		if (number > movies.size()){
+			throw new IllegalArgumentException(number + " is larger than movies size " + movies.size());
+		}
 		List<Movie> movieList = new ArrayList<>(movies.values());
+		// Define a Comperator by rank
 		Collections.sort(movieList, (m1, m2) -> {
 			if (m1.getRank() < m2.getRank()) return 1;
 			if (m1.getRank() > m2.getRank()) return -1;
 			return 0;			
 		});
-		//List<Movie> topList = new ArrayList<Movie>(number);
-//		for (Movie movie : movieList) {
-//			topList.add(movie);
-//		}
-//		Iterator<Movie> iter = movieList.iterator();
-//		for (int i =0; i < number; i++) {
-//			topList.add(iter.next());
-//		}
 		return movieList.subList(0, number);
 	}
 	

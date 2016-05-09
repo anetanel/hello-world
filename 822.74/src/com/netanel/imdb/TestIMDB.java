@@ -111,6 +111,6 @@ public class TestIMDB {
 		imdb.vote("TTest4", 9); 
 		imdb.vote("STest5", 10);
 		//System.out.println(imdb.getAll());
-		System.out.println(imdb.getTop(3));
+		System.out.println(imdb.getTop(8));
 	}
 }
