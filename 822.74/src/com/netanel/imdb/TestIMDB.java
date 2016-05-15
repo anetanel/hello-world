@@ -105,12 +105,25 @@ public class TestIMDB {
 		imdb.addMovie("TTest4", new HashSet<>(Arrays.asList("Sami4", "Susu4")));
 		imdb.addMovie("STest5", new HashSet<>(Arrays.asList("Sami5", "Susu5")));
 		
+		imdb.vote("XTest1", 0);
+		imdb.vote("XTest1", 1);
+		imdb.vote("XTest1", 2);
+		imdb.vote("XTest1", 3);
+		imdb.vote("XTest1", 4);
+		imdb.vote("XTest1", 5);
+		imdb.vote("XTest1", 6);
+		imdb.vote("XTest1", 10);
 		imdb.vote("XTest1", 10);
 		imdb.vote("ATest2", 2);
 		imdb.vote("BTest3", 5);
 		imdb.vote("TTest4", 9); 
 		imdb.vote("STest5", 10);
 		//System.out.println(imdb.getAll());
-		System.out.println(imdb.getTop(8));
+		//System.out.println(imdb.getTop(4));
+		
+		List<Movie> test = new ArrayList<>(imdb.getMovies().values());
+		System.out.println(test);
+		Collections.sort(test);
+		System.out.println(test);
 	}
 }

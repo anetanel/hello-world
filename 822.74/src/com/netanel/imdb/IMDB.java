@@ -17,7 +17,13 @@ public class IMDB {
 	// Functions
 	//
 	public Map<String, Movie> getMovies() {
+		//Return Map of all Movies
 		return movies;
+	}
+	
+	public Collection<Movie> getAll(){
+		//Return Collection of all Movies
+		return movies.values();
 	}
 	
 	public Movie addMovie(String name, Set<String> actors){
@@ -35,11 +41,7 @@ public class IMDB {
 		movies.put(movie.getName(), movie);
 	}
 	
-	public Collection<Movie> getAll(){
-		//Return Collection of all Movies
-		return movies.values();
-	}
-	
+
 	public double vote(String name, int voting){
 		//send a single vote for a movie. Returns the new calculated rank.
 		movies.get(name).updateRank(voting);
