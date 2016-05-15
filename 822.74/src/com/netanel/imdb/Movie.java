@@ -58,7 +58,7 @@ public class Movie implements Comparable<Movie>{
 	
 	@Override
 	public String toString() {
-		return "Movie: " + name + ". Actors: " + actors + ". Voters: " + numOfVoters + ". Rank: " + String.format("%.1f", rank);
+		return "Movie: " + name + ".\n Actors: " + actors + ". Voters: " + numOfVoters + ". Rank: " + String.format("%.1f", rank) + "\n";
 	}
 
 	@Override
