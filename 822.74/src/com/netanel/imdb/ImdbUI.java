@@ -65,10 +65,8 @@ public class ImdbUI {
 						top = defaultTop;
 					} else {
 						defaultTop = top = imdb.getMovies().size();
-						//defaultTop = imdb.getMovies().size();
 					}
 				}
-				// System.out.println("Showing top " + top + " movies:");
 				try {
 					System.out.println("Showing top " + top + " movies:\n" + imdb.getTop(top));
 				} catch (IllegalArgumentException e) {
