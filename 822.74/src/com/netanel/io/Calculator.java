@@ -4,27 +4,28 @@ import java.util.Scanner;
 
 public class Calculator {
 	public static void main(String[] args) {
-		int result=0;
+		int result = 0;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("First number:");
 		int num1 = sc.nextInt();
 		System.out.println("Second number:");
-		int num2 = sc.nextInt();	
+		int num2 = sc.nextInt();
 		System.out.println("Operation:");
 		String opr = sc.next();
-		if (opr.equals("+")){
+		sc.close();
+		if (opr.equals("+")) {
 			result = num1 + num2;
-		} else if (opr.equals("-")){
+		} else if (opr.equals("-")) {
 			result = num1 - num2;
-		} else if (opr.equals("/")){
+		} else if (opr.equals("/")) {
 			result = num1 / num2;
-		} else if (opr.equals("*")){
+		} else if (opr.equals("*")) {
 			result = num1 * num2;
 		} else {
 			throw new ArithmeticException("Invalid operand!");
 		}
-		
-		System.out.println(num1 + opr + num2 + "=" + result );
-		
+
+		System.out.println(num1 + opr + num2 + "=" + result);
+
 	}
 }

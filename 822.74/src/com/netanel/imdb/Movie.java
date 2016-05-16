@@ -21,6 +21,8 @@ public class Movie implements Comparable<Movie>{
 		this.name = name;
 		this.actors = actors;
 	}
+	
+
 
 	//
 	// Getters
