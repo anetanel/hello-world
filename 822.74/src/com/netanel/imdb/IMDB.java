@@ -45,6 +45,9 @@ public class IMDB {
 
 	public double vote(String name, int voting){
 		//send a single vote for a movie. Returns the new calculated rank.
+		if (movies.get(name) == null) {
+			throw new IllegalArgumentException(name + " does not exist in DB!");
+		}
 		movies.get(name).updateRank(voting);
 		return movies.get(name).getRank();
 	}
@@ -53,6 +56,9 @@ public class IMDB {
 		// Returns a list of size 'number', of top ranked movies.
 		if (number > movies.size()){
 			throw new IllegalArgumentException(number + " is larger than movies size " + movies.size());
+		}
+		if (number < 1) {
+			throw new IllegalArgumentException("Illegal number: " + number);
 		}
 		List<Movie> movieList = new ArrayList<>(movies.values());
 		// Define a Comperator by rank

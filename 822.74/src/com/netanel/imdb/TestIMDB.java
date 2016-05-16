@@ -4,6 +4,7 @@ import java.util.*;
 
 public class TestIMDB {
 	public static void main(String[] args) {
+
 //		Movie m1 = new Movie("Agmageddon", new HashSet<>());
 //		m1.addActor("Bruce Willis");
 //		m1.addActor("Ben Affleck");
@@ -100,24 +101,37 @@ public class TestIMDB {
 //		System.out.println("*****************************");
 		IMDB imdb = new IMDB();
 		imdb.addMovie("XTest1", new HashSet<>(Arrays.asList("Sami1", "Susu1")));
-//		imdb.addMovie("ATest2", new HashSet<>(Arrays.asList("Sami2", "Susu2")));
-//		imdb.addMovie("BTest3", new HashSet<>(Arrays.asList("Sami3", "Susu3")));
-//		imdb.addMovie("TTest4", new HashSet<>(Arrays.asList("Sami4", "Susu4")));
-//		imdb.addMovie("STest5", new HashSet<>(Arrays.asList("Sami5", "Susu5")));
-//		
-//		imdb.vote("XTest1", 0);
-//		imdb.vote("XTest1", 1);
-//		imdb.vote("XTest1", 2);
-//		imdb.vote("XTest1", 3);
-//		imdb.vote("XTest1", 4);
-//		imdb.vote("XTest1", 5);
-//		imdb.vote("XTest1", 6);
-//		imdb.vote("XTest1", 10);
-//		imdb.vote("XTest1", 10);
-//		imdb.vote("ATest2", 2);
-//		imdb.vote("BTest3", 5);
-//		imdb.vote("TTest4", 9); 
-//		imdb.vote("STest5", 10);
+		imdb.addMovie("ATest2", new HashSet<>(Arrays.asList("Sami2", "Susu2")));
+		imdb.addMovie("BTest3", new HashSet<>(Arrays.asList("Sami3", "Susu3")));
+		imdb.addMovie("TTest4", new HashSet<>(Arrays.asList("Sami4", "Susu4")));
+		imdb.addMovie("STest5", new HashSet<>(Arrays.asList("Sami5", "Susu5")));
+		imdb.addMovie("STest25", new HashSet<>(Arrays.asList("Sami5", "Susu5")));
+		imdb.addMovie("STest35", new HashSet<>(Arrays.asList("Sami5", "Susu5")));
+		imdb.addMovie("STest45", new HashSet<>(Arrays.asList("Sami5", "Susu5")));
+		imdb.addMovie("STest55", new HashSet<>(Arrays.asList("Sami5", "Susu5")));
+		imdb.addMovie("STest65", new HashSet<>(Arrays.asList("Sami5", "Susu5")));
+		imdb.addMovie("STest75", new HashSet<>(Arrays.asList("Sami5", "Susu5")));
+		imdb.addMovie("STest85", new HashSet<>(Arrays.asList("Sami5", "Susu5")));
+		imdb.addMovie("STest95", new HashSet<>(Arrays.asList("Sami5", "Susu5")));
+		imdb.addMovie("STest05", new HashSet<>(Arrays.asList("Sami5", "Susu5")));
+		imdb.addMovie("STest115", new HashSet<>(Arrays.asList("Sami5", "Susu5")));
+		imdb.addMovie("STest225", new HashSet<>(Arrays.asList("Sami5", "Susu5")));
+		imdb.addMovie("STest335", new HashSet<>(Arrays.asList("Sami5", "Susu5")));
+		imdb.addMovie("STest445", new HashSet<>(Arrays.asList("Sami5", "Susu5")));
+		
+		imdb.vote("XTest1", 0);
+		imdb.vote("XTest1", 1);
+		imdb.vote("XTest1", 2);
+		imdb.vote("XTest1", 3);
+		imdb.vote("XTest1", 4);
+		imdb.vote("XTest1", 5);
+		imdb.vote("XTest1", 6);
+		imdb.vote("XTest1", 10);
+		imdb.vote("XTest1", 10);
+		imdb.vote("ATest2", 2);
+		imdb.vote("BTest3", 5);
+		imdb.vote("TTest4", 9); 
+		imdb.vote("STest5", 10);
 		//System.out.println(imdb.getAll());
 		//System.out.println(imdb.getTop(4));
 		
