@@ -137,6 +137,7 @@ public class ImdbUI {
 
 	private static String[] getLine() {
 		// Splits a semi-colon delimited line to a String array
+		@SuppressWarnings("resource")
 		Scanner stdInScanner = new Scanner(System.in);
 		String[] tokens = stdInScanner.nextLine().split(";");
 		//stdInScanner.close();
