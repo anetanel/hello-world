@@ -9,7 +9,7 @@ public class ImdbUI {
 		boolean done = false;
 		String[] tokens;
 		String name;
-		String availableCommands = "Available commands: add, add actor, vote, get, get all, top, done.";
+		String availableCommands = "Available commands: add, add actor, vote, get, get all, top, save, load, done.";
 
 		System.out.println("Welcome to the IMDB User Interface.\n" + availableCommands);
 		while (!done) {
@@ -104,25 +104,13 @@ public class ImdbUI {
 				break;
 				
 			case "save":
-				try {
-					imdb.save();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				save(imdb);
 				break;
 
 			case "load":
-				try {
-					imdb.load();
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				load(imdb);
 				break;
+				
 			case "done":
 				// End the loop
 				done = true;
@@ -162,6 +150,28 @@ public class ImdbUI {
 		} catch (IllegalArgumentException e) {
 			System.out.println(e.getMessage());
 			System.out.println("Showing top " + defaultTop + " movies:\n" + imdb.getTop(defaultTop));
+		}
+	}
+	
+	private static void save(IMDB imdb) {
+		try {
+			imdb.save();
+			System.out.println("Database saved succesfuly.");
+		} catch (IOException e) {
+			e.getMessage();
+		}
+	}
+	
+	private static void load(IMDB imdb) {
+		try {
+			imdb.load();
+			System.out.println("Database loaded succesfuly.");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }
