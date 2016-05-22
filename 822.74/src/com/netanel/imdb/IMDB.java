@@ -1,8 +1,13 @@
 package com.netanel.imdb;
 
+import java.io.*;
 import java.util.*;
 
-public class IMDB {
+public class IMDB implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	//
 	// Attributes
 	//
@@ -68,6 +73,21 @@ public class IMDB {
 			return 0;			
 		});
 		return movieList.subList(0, number);
+	}
+	
+	public void save() throws IOException {
+		ObjectOutputStream out = new ObjectOutputStream(
+				new FileOutputStream("imdb.dat"));
+		out.writeObject(movies);
+		out.close();
+	}
+	
+	public void load() throws IOException, ClassNotFoundException {
+		ObjectInputStream in = 
+				new ObjectInputStream(
+						new FileInputStream("imdb.dat"));
+		movies = (Map<String, Movie>)in.readObject();
+		in.close();
 	}
 	
 }

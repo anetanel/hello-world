@@ -1,9 +1,10 @@
 package com.netanel.imdb;
 
+import java.io.*;
 import java.util.*;
 
 public class TestIMDB {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception, IOException {
 
 //		Movie m1 = new Movie("Agmageddon", new HashSet<>());
 //		m1.addActor("Bruce Willis");
@@ -141,6 +142,17 @@ public class TestIMDB {
 //		System.out.println(test);
 		
 		ImdbUI.runUI(imdb);
+//		ObjectOutputStream out = new ObjectOutputStream(
+//				new FileOutputStream("book.dat"));
+//		out.writeObject(imdb);
+//		out.close();
+//		
+//		ObjectInputStream in = 
+//				new ObjectInputStream(
+//						new FileInputStream("book.dat"));
+//		IMDB b2 = (IMDB)in.readObject();
+//		in.close();
+//		ImdbUI.runUI(b2);
 		
 	}
 }

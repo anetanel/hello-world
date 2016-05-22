@@ -1,5 +1,6 @@
 package com.netanel.imdb;
 
+import java.io.IOException;
 import java.util.*;
 
 public class ImdbUI {
@@ -78,28 +79,6 @@ public class ImdbUI {
 			case "top":
 				getTop(imdb, tokens);
 				break;
-				// "top" method"
-
-//				// Define default top size to be used when an error occurs.
-//				int top, defaultTop = 8;
-//				// Check if the user entered a top number
-//				if (tokens.length >= 2) {
-//					top = Integer.parseInt(tokens[1]);
-//				} else {
-//					if (imdb.getMovies().size() > defaultTop) {
-//						top = defaultTop;
-//					} else {
-//						defaultTop = top = imdb.getMovies().size();
-//					}
-//				}
-//				try {
-//					System.out.println("Showing top " + top + " movies:\n" + imdb.getTop(top));
-//				} catch (IllegalArgumentException e) {
-//					System.out.println(e.getMessage());
-//					System.out.println("Showing top " + defaultTop + " movies:\n" + imdb.getTop(defaultTop));
-//					break;
-//				}
-//				break;
 
 			case "add actor":
 				// "add actor" method
@@ -123,7 +102,27 @@ public class ImdbUI {
 					}
 				}
 				break;
+				
+			case "save":
+				try {
+					imdb.save();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				break;
 
+			case "load":
+				try {
+					imdb.load();
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				break;
 			case "done":
 				// End the loop
 				done = true;
@@ -149,15 +148,14 @@ public class ImdbUI {
 	private static void getTop(IMDB imdb, String[] tokens) {
 		// Define default top size to be used when an error occurs.
 		int top, defaultTop = 8;
+		if (imdb.getMovies().size() < defaultTop) {
+			defaultTop = imdb.getMovies().size();
+		}
 		// Check if the user entered a top number
-		if (tokens.length >= 2) {
+		if (tokens.length > 1) {
 			top = Integer.parseInt(tokens[1]);
 		} else {
-			if (imdb.getMovies().size() > defaultTop) {
-				top = defaultTop;
-			} else {
-				defaultTop = top = imdb.getMovies().size();
-			}
+			top = defaultTop;
 		}
 		try {
 			System.out.println("Showing top " + top + " movies:\n" + imdb.getTop(top));
@@ -166,5 +164,4 @@ public class ImdbUI {
 			System.out.println("Showing top " + defaultTop + " movies:\n" + imdb.getTop(defaultTop));
 		}
 	}
-
 }

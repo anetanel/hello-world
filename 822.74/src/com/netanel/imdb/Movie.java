@@ -1,8 +1,9 @@
 package com.netanel.imdb;
 
+import java.io.Serializable;
 import java.util.Set;
 
-public class Movie implements Comparable<Movie>{
+public class Movie implements Comparable<Movie>, Serializable{
 	//
 	// Attributes
 	//
